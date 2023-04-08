@@ -1,18 +1,20 @@
 import { useDispatch } from 'react-redux';
 import { logOut } from 'redux/auth/operations';
 import { useAuth } from 'hooks';
-import { Wrap, Btn_Logout } from './UserMenu.styled';
+import { Wrap, BtnLogout } from './UserMenu.styled';
 
 export const UserMenu = () => {
   const dispatch = useDispatch();
   const { user } = useAuth();
 
+  const handleLogOut = () => dispatch(logOut());
+
   return (
     <Wrap>
       <p>Welcome, {user.name}</p>
-      <Btn_Logout type="button" onClick={() => dispatch(logOut())}>
+      <BtnLogout type="button" onClick={handleLogOut}>
         Logout
-      </Btn_Logout>
+      </BtnLogout>
     </Wrap>
   );
 };

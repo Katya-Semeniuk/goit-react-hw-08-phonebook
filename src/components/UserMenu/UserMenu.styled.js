@@ -6,7 +6,7 @@ export const Wrap = styled.div`
   align-items: center;
 `;
 
-export const Btn_Logout = styled.button`
+export const BtnLogout = styled.button`
   margin-left: 5px;
   cursor: pointer;
   border-radius: 4px;

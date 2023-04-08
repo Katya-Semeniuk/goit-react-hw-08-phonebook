@@ -51,4 +51,18 @@ const contactsSlice = createSlice({
   },
 });
 
+// const contactsSlice = createSlice({
+//   name: 'contacts',
+//   initialState: {
+//     items: [],
+//     isLoading: false,
+//     error: null,
+//   },
+//   extraReducers: builder => {
+//     builder.addCase(fetchContacts.pending, (state, action) => {
+//       state.contacts.items = action.payload;
+//     });
+//   },
+// });
+
 export const contactsReducer = contactsSlice.reducer;

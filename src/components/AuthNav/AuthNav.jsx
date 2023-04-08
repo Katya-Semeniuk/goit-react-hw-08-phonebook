@@ -1,14 +1,31 @@
-import { Button_reg, StyledLink, Button_log } from './AuthNav.styled';
+import Button from '@mui/material/Button';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { StyledLink, Container, Grid } from './AuthNav.styled';
 
 export const AuthNav = () => {
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: '#66e4ba',
+      },
+    },
+  });
+
   return (
-    <div>
-      <Button_reg type="button">
-        <StyledLink to="/register">Register</StyledLink>
-      </Button_reg>
-      <Button_log>
-        <StyledLink to="/login">Log In</StyledLink>
-      </Button_log>
-    </div>
+    <Container>
+      <Grid>
+        <ThemeProvider theme={theme}>
+          <Button variant="contained" color="primary">
+            <StyledLink to="/register">Register</StyledLink>
+          </Button>
+        </ThemeProvider>
+      </Grid>
+
+      <ThemeProvider theme={theme}>
+        <Button variant="contained" color="primary">
+          <StyledLink to="/login">Log In</StyledLink>
+        </Button>
+      </ThemeProvider>
+    </Container>
   );
 };
