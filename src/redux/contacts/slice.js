@@ -17,6 +17,12 @@ const contactsSlice = createSlice({
     items: [],
     isLoading: false,
     error: null,
+    filter: '',
+  },
+  reducers: {
+    filteredContacts: (state, action) => {
+      state.filter = action.payload;
+    },
   },
   extraReducers: {
     [fetchContacts.pending]: handlePending,
@@ -38,10 +44,7 @@ const contactsSlice = createSlice({
     [deleteContact.fulfilled](state, action) {
       state.isLoading = false;
       state.error = null;
-      const index = state.items.findIndex(
-        task => task.id === action.payload.id
-      );
-      state.items.splice(index, 1);
+      state.items = state.items.filter(item => item.id !== action.payload.id);
     },
     [logOut.fulfilled](state) {
       state.items = [];
@@ -50,19 +53,6 @@ const contactsSlice = createSlice({
     },
   },
 });
-
-// const contactsSlice = createSlice({
-//   name: 'contacts',
-//   initialState: {
-//     items: [],
-//     isLoading: false,
-//     error: null,
-//   },
-//   extraReducers: builder => {
-//     builder.addCase(fetchContacts.pending, (state, action) => {
-//       state.contacts.items = action.payload;
-//     });
-//   },
-// });
+export const { filteredContacts } = contactsSlice.actions;
 
 export const contactsReducer = contactsSlice.reducer;

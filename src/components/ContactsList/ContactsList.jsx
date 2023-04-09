@@ -1,32 +1,39 @@
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { deleteContact } from 'redux/contacts/operations';
-import { selectAllContacts } from 'redux/contacts/selectors';
+import { visibleContacts } from 'redux/contacts/selectors';
+import IconButton from '@mui/material/IconButton';
+import DeleteIcon from '@mui/icons-material/Delete';
+import { List, Item, Wrap } from './ContactsList.styled';
 
 export const ContactsList = () => {
   const dispatch = useDispatch();
-  const contacts = useSelector(selectAllContacts);
-  console.log('ContactsList', contacts);
+
+  const filteredContacts = useSelector(visibleContacts);
 
   const onDeleteContact = id => {
     dispatch(deleteContact(id));
   };
+
   return (
     <div>
-      ContactsList
-      {contacts && (
-        <ul>
-          {contacts.map(({ id, name, number }) => (
-            <li key={id}>
-              <p>{name}</p>
-              <p>{number}</p>
-
-              <button type="button" onClick={() => onDeleteContact(id)}>
-                Delete
-              </button>
-            </li>
+      {filteredContacts && (
+        <List>
+          {filteredContacts.map(({ id, name, number }) => (
+            <Item key={id}>
+              <Wrap>
+                <p>{name}</p>
+                <p>{number}</p>
+                <IconButton
+                  aria-label="delete"
+                  onClick={() => onDeleteContact(id)}
+                >
+                  <DeleteIcon />
+                </IconButton>
+              </Wrap>
+            </Item>
           ))}
-        </ul>
+        </List>
       )}
     </div>
   );
