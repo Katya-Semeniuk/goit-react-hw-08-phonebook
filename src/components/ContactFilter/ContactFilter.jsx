@@ -2,6 +2,7 @@ import { useSelector } from 'react-redux';
 import { filteredContacts } from '../../redux/contacts/slice';
 import { selectFilter } from 'redux/contacts/selectors';
 import { useDispatch } from 'react-redux';
+import { Input } from './ContactFilter.styled';
 
 export const ContactFilter = () => {
   const dispatch = useDispatch();
@@ -12,13 +13,15 @@ export const ContactFilter = () => {
   };
 
   return (
-    <label>
-      Find contacts by name
-      <input
-        value={filter}
-        onChange={e => changeFilter(e.currentTarget.value)}
-        type="text"
-      />
-    </label>
+    <div>
+      <label>
+        <Input
+          value={filter}
+          onChange={e => changeFilter(e.currentTarget.value)}
+          type="text"
+          placeholder="Find contact by name"
+        />
+      </label>
+    </div>
   );
 };

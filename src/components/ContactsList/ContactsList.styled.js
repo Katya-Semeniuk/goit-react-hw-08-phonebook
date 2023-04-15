@@ -1,20 +1,34 @@
 import styled from 'styled-components';
 
 export const List = styled.ul`
-  margin: 0;
-  padding: 0;
+  list-style: none;
+  padding: 5px;
 `;
 
 export const Item = styled.li`
-  font-size: 20px;
-
-  &:last-child {
-    margin-bottom: 0px;
-  }
+  font-size: 14px;
+  padding: 5px 15px;
+  color: rgb(81 81 84);
+  width: 280px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0px 2px 8px 2px #e4e7ec;
+  border-radius: 5px;
+  margin-bottom: 5px;
 `;
 
-export const Wrap = styled.div`
+export const WrapInfo = styled.div`
   display: flex;
-  gap: 7px;
   align-items: center;
+  justify-content: space-between;
+`;
+
+export const Info = styled.div`
+  display: flex;
+  gap: 15px;
+  align-items: center;
+`;
+export const Name = styled.p`
+  font-size: 15px;
+  color: black;
 `;

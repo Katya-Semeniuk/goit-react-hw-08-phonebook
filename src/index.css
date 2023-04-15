@@ -16,3 +16,18 @@ code {
 .active {
   color: #52cca3;
 }
+
+h1,
+h2,
+h3,
+ul,
+p {
+  margin: 0px;
+  padding: 0px;
+}
+
+::placeholder {
+  color: rgb(152, 152, 152);
+  font-size: 17px;
+  font-family: Georgia, serif;
+}

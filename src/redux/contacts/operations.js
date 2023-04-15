@@ -1,5 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 export const fetchContacts = createAsyncThunk(
   'contacts/fetchAll',
@@ -21,6 +22,7 @@ export const addContact = createAsyncThunk(
         name: newContact.name,
         number: newContact.number,
       });
+      toast.success(`Contact ${response.data.name} was added`);
       return response.data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);

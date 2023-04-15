@@ -1,13 +1,18 @@
 import { useAuth } from 'hooks';
-import { Title } from './Navigation.styled';
+import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
+import { Title, Nav } from './Navigation.styled';
 
 export const Navigation = () => {
   const { isLoggedIn } = useAuth();
 
   return (
-    <nav>
-      <Title to="/">Home</Title>
+    <Nav>
+      <Title to="/">
+        <HomeRoundedIcon />
+        Home
+      </Title>
+
       {isLoggedIn && <Title to="/contacts">Contacts</Title>}
-    </nav>
+    </Nav>
   );
 };
