@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { createPortal } from 'react-dom';
-// import PropTypes from 'prop-types';
 import { Overlay, Modal } from './ModalPage.styled';
 
 const modalRoot = document.querySelector('#modal-root');
@@ -36,7 +35,4 @@ class ModalPage extends Component {
   }
 }
 
-// Modal.propTypes = {
-//   largeImageURL: PropTypes.string.isRequired,
-// };
 export default ModalPage;

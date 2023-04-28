@@ -3,7 +3,6 @@ import { Grid, Title, Text, Heading, Article } from './Home.styled';
 export default function Home() {
   return (
     <>
-      {' '}
       <Title>Welcome to main page</Title>
       <Grid>
         <Article>

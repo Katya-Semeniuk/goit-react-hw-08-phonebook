@@ -3,12 +3,12 @@ import styled from 'styled-components';
 export const Grid = styled.div`
   padding: 20px;
   display: grid;
-  grid-gap: 15px;
+  grid-gap: 20px;
   grid-template-columns: 1fr 1fr 1fr;
 `;
 
 export const Title = styled.h1`
-  margin: 0px;
+  margin: 10px;
   padding: 0px;
   text-align: center;
   font-family: arial;
@@ -22,6 +22,7 @@ export const Article = styled.div`
   padding: 20px;
   border: 1px solid black;
   border-radius: 4px;
+  background-color: white;
 
   box-shadow: inset 0 -2em 3em rgba(0, 0, 0, 0.1), 0 0 0 1px rgb(255, 255, 255),
     0.2em 0.5em 1em rgba(0, 0, 0, 0.3);

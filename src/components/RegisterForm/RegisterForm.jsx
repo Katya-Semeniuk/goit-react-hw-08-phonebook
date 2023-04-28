@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { CssTextField, Title } from './RegisterForm.styled';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
+import { notCorrectRegistration } from '../Notification/Notification';
 
 export const RegisterForm = () => {
   const dispatch = useDispatch();
@@ -10,11 +11,18 @@ export const RegisterForm = () => {
   const handleSubmit = e => {
     e.preventDefault();
     const form = e.currentTarget;
+
+    const nameValue = form.elements.name.value;
+    const emailValue = form.elements.email.value;
+    const passwordValue = form.elements.password.value;
+    if (!nameValue || !emailValue || !passwordValue) {
+      notCorrectRegistration();
+    }
     dispatch(
       register({
-        name: form.elements.name.value,
-        email: form.elements.email.value,
-        password: form.elements.password.value,
+        name: nameValue,
+        email: emailValue,
+        password: passwordValue,
       })
     );
     form.reset();

@@ -6,7 +6,11 @@ import { ContactForm } from 'components/ContactForm/ContactForm';
 import { ContactFilter } from 'components/ContactFilter/ContactFilter';
 import { ContactsList } from 'components/ContactsList/ContactsList';
 import ModalPage from 'components/ModalPage/ModalPage';
-import { Grid, Title, Subtitle, Count } from './Contact.styled';
+
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import Button from '@mui/material/Button';
+import SendIcon from '@mui/icons-material/Send';
+import { Grid, Title, Subtitle, Count, WrapButton } from './Contact.styled';
 
 export default function Contact() {
   const [showModal, setshowModal] = useState(false);
@@ -20,25 +24,55 @@ export default function Contact() {
     dispatch(fetchContacts());
   }, [dispatch]);
 
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: '#8f50ca',
+      },
+    },
+  });
+
   return (
     <Grid>
       <Title>Phonebook</Title>
-      {contacts.length === 0 ? (
-        <div>Add new contact to your Phonebook</div>
-      ) : (
+      {contacts.length === 0 && (
         <Subtitle>
-          You have <Count>{contacts.length}</Count> contacts
+          Your phone book doesn't contain any contacts. <br />
+          Add new contacts right now!
         </Subtitle>
       )}
-      <button type="button" onClick={toggleModal}>
-        Create a new contact
-      </button>
-      <ContactForm />
+      {contacts.length === 1 && (
+        <Subtitle>
+          You have <Count>1</Count> contact
+        </Subtitle>
+      )}
+      {contacts.length > 1 && (
+        <Subtitle>
+          You have <Count>{contacts.length} </Count> contacts
+        </Subtitle>
+      )}
+
+      <WrapButton>
+        <ThemeProvider theme={theme}>
+          <Button
+            type="button"
+            onClick={toggleModal}
+            variant="contained"
+            endIcon={<SendIcon />}
+          >
+            Add a new contact
+          </Button>
+        </ThemeProvider>
+      </WrapButton>
 
       <Title> Your ContactsList</Title>
       <ContactFilter />
       {contacts.length > 0 && <ContactsList />}
-      {showModal && <ModalPage onClose={toggleModal} />}
+      {showModal && (
+        <ModalPage onClose={toggleModal}>
+          <ContactForm closeModal={toggleModal} />
+        </ModalPage>
+      )}
     </Grid>
   );
 }

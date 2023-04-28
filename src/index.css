@@ -7,6 +7,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(245, 245, 245);
 }
 
 code {
@@ -27,7 +28,7 @@ p {
 }
 
 ::placeholder {
-  color: rgb(152, 152, 152);
+  color: rgb(144, 144, 144);
   font-size: 17px;
   font-family: Georgia, serif;
 }
