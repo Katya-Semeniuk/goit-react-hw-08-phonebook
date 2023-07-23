@@ -6,6 +6,7 @@ export const Title = styled(NavLink)`
   justify-content: center;
   align-items: center;
   font-size: 25px;
+
   text-decoration: none;
 
   &:not(:last-child) {
@@ -13,7 +14,7 @@ export const Title = styled(NavLink)`
   }
 
   &:hover {
-    color: #66e4ba;
+    color: #52cca3;
   }
 `;
 

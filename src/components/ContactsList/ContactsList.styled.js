@@ -13,9 +13,15 @@ export const Item = styled.li`
   width: 280px;
   margin-left: auto;
   margin-right: auto;
-  box-shadow: 0px 2px 8px 2px #e4e7ec;
   border-radius: 5px;
   margin-bottom: 8px;
+  background-color: white;
+  transition: transform 0.2s linear, box-shadow 0.2s linear;
+
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: #93edce 0px 2px 8px 2px;
+  }
   &:last-child:not(:only-child) {
     margin-bottom: 0;
   }
