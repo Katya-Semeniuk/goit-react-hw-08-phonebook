@@ -2,7 +2,7 @@ import { register } from 'redux/auth/operations';
 import { useDispatch } from 'react-redux';
 import Button from '@mui/material/Button';
 import { CssTextField, Title, ErrorMessage, Form } from './RegisterForm.styled';
-
+import { Loader } from '../Loader/Loader';
 import { Formik, Field } from 'formik';
 import * as Yup from 'yup';
 
@@ -74,6 +74,7 @@ export const RegisterForm = () => {
             name="password"
             required
           />
+
           {errors.password && touched.password ? (
             <ErrorMessage>{errors.password}</ErrorMessage>
           ) : null}
@@ -84,13 +85,13 @@ export const RegisterForm = () => {
             style={{
               marginLeft: 'auto',
               marginRight: 'auto',
-              maxWidth: 150,
+              width: 120,
               color: 'black',
               backgroundColor: '#64ffda',
               borderColor: '#00bfa5',
             }}
           >
-            Sign Up
+            {isSubmitting ? <Loader /> : 'Sign Up'}
           </Button>
         </Form>
       )}

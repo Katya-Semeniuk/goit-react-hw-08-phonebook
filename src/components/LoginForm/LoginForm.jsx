@@ -2,6 +2,7 @@ import { useDispatch } from 'react-redux';
 import { logIn } from 'redux/auth/operations';
 import { CssTextField, Title, Form, ErrorMessage } from './LoginForm.styled';
 import Button from '@mui/material/Button';
+import { Loader } from '../Loader/Loader';
 
 import { Formik, Field } from 'formik';
 import * as Yup from 'yup';
@@ -73,13 +74,13 @@ export const LoginForm = () => {
             style={{
               marginLeft: 'auto',
               marginRight: 'auto',
-              maxWidth: 150,
+              width: 120,
               color: 'black',
               backgroundColor: '#64ffda',
               borderColor: '#00bfa5',
             }}
           >
-            {isSubmitting ? 'Submitting...' : 'Log In'}
+            {isSubmitting ? <Loader /> : 'Log In'}
           </Button>
         </Form>
       )}

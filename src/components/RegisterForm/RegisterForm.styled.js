@@ -16,6 +16,7 @@ export const Form = styled(FormikForm)`
 `;
 
 export const Title = styled.p`
+  position: relative;
   text-align: center;
   color: #00bfa5;
   font-family: 'freight-big-pro';
