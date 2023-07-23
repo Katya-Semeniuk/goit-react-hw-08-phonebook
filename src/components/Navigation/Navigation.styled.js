@@ -9,7 +9,7 @@ export const Title = styled(NavLink)`
   text-decoration: none;
 
   &:not(:last-child) {
-    margin-right: 7px;
+    margin-right: 10px;
   }
 
   &:hover {

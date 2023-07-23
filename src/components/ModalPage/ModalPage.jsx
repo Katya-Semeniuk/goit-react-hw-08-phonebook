@@ -7,12 +7,11 @@ const modalRoot = document.querySelector('#modal-root');
 class ModalPage extends Component {
   componentDidMount() {
     window.addEventListener('keydown', this.handleKeyDown);
-    window.removeEventListener('keydown', this.handleKeyDown);
   }
 
-  // componentWillMount() {
-  //   window.removeEventListener('keydown', this.handleKeyDown);
-  // }
+  componentWillMount() {
+    window.removeEventListener('keydown', this.handleKeyDown);
+  }
 
   handleKeyDown = e => {
     if (e.code === 'Escape') {

@@ -27,7 +27,9 @@ const authSlice = createSlice({
         state.isLoggedIn = true;
       })
       .addCase(logIn.rejected, (state, action) => {
-        state.contacts.error = action.payload;
+        // state.contacts.error = action.payload;
+        state.contacts = action.payload;
+        console.log(state.contacts);
       })
       .addCase(logOut.fulfilled, (state, action) => {
         state.user = { name: null, email: null };

@@ -6,6 +6,7 @@ import { ContactForm } from 'components/ContactForm/ContactForm';
 import { ContactFilter } from 'components/ContactFilter/ContactFilter';
 import { ContactsList } from 'components/ContactsList/ContactsList';
 import ModalPage from 'components/ModalPage/ModalPage';
+import ContactPhoneIcon from '@mui/icons-material/ContactPhone';
 
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Button from '@mui/material/Button';
@@ -34,7 +35,11 @@ export default function Contact() {
 
   return (
     <Grid>
-      <Title>Phonebook</Title>
+      <Title>
+        <ContactPhoneIcon fontSize="large" />
+        Phonebook
+      </Title>
+
       {contacts.length === 0 && (
         <Subtitle>
           Your phone book doesn't contain any contacts. <br />

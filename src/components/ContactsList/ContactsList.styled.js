@@ -15,7 +15,7 @@ export const Item = styled.li`
   margin-right: auto;
   box-shadow: 0px 2px 8px 2px #e4e7ec;
   border-radius: 5px;
-  margin-bottom: 7px;
+  margin-bottom: 8px;
   &:last-child:not(:only-child) {
     margin-bottom: 0;
   }

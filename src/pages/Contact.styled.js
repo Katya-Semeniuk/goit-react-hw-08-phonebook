@@ -1,16 +1,17 @@
 import styled from 'styled-components';
 
 export const Grid = styled.div`
-  padding: 15px;
   width: 550px;
-  height: 100vh;
-  margin-right: auto;
-  margin-left: auto;
+  margin: 15px auto;
 `;
 export const Title = styled.h2`
-  margin: 10px;
-  font-family: Georgia, serif;
+  display: flex;
+  justify-content: center;
   text-align: center;
+  gap: 6px;
+  font-size: 35px;
+  margin-bottom: 10px;
+  font-family: Georgia, serif;
   color: #6106b5;
 `;
 
