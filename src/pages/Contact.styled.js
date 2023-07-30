@@ -1,4 +1,19 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+import ContactPhoneIcon from '@mui/icons-material/ContactPhone';
+
+//
+
+const spinAnimation = keyframes`
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+`;
+export const RotatingContactPhoneIcon = styled(ContactPhoneIcon)`
+  animation: ${spinAnimation} 3s linear infinite;
+`;
 
 export const Grid = styled.div`
   width: 550px;

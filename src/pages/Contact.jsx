@@ -6,12 +6,18 @@ import { ContactForm } from 'components/ContactForm/ContactForm';
 import { ContactFilter } from 'components/ContactFilter/ContactFilter';
 import { ContactsList } from 'components/ContactsList/ContactsList';
 import ModalPage from 'components/ModalPage/ModalPage';
-import ContactPhoneIcon from '@mui/icons-material/ContactPhone';
 
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import SendIcon from '@mui/icons-material/Send';
-import { Grid, Title, Subtitle, Count, WrapButton } from './Contact.styled';
+import {
+  Grid,
+  Title,
+  Subtitle,
+  Count,
+  WrapButton,
+  RotatingContactPhoneIcon,
+} from './Contact.styled';
 
 export default function Contact() {
   const [showModal, setshowModal] = useState(false);
@@ -36,7 +42,7 @@ export default function Contact() {
   return (
     <Grid>
       <Title>
-        <ContactPhoneIcon fontSize="large" />
+        <RotatingContactPhoneIcon fontSize="large" />
         Phonebook
       </Title>
 

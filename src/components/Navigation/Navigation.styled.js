@@ -16,7 +16,12 @@ export const Title = styled(NavLink)`
   &:hover {
     color: #52cca3;
   }
+  &.active {
+    color: rgb(70, 178, 152);
+  }
 `;
+
+// color: #52cca3
 
 export const Nav = styled.nav`
   display: flex;
